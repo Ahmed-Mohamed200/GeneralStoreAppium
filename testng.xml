@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test name="playGround">
         <classes>
-            <class name="Tests.EndToEnd"></class>
+            <class name="Tests.EndToEndTest"></class>
         </classes>
     </test>
 </suite>

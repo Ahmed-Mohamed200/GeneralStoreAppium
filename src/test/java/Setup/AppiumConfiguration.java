@@ -26,13 +26,13 @@ public class AppiumConfiguration {
         service.start();
 
         UiAutomator2Options options = new UiAutomator2Options()
-                .setDeviceName("Bandora")
-                .setApp("C:\\Users\\user\\IdeaProjects\\BrowserStack\\src\\test\\resources\\General-Store.apk");
+                .setDeviceName(reader.get("androidDeviceName"))
+                .setApp(appPath);
 
         String appiumServerURL = reader.get("appiumServerURL");
         System.out.println("Appium Server URL: " + appiumServerURL);
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+        driver = new AndroidDriver(new URL(appiumServerURL), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
